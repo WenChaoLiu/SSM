@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--setting配置，需要再添加-->
+    <!--别名的配置-->
+    <typeAliases>
+        <!--批量扫描名-->
+        <package name="cym.ssm.po"></package>
+    </typeAliases>
+    <!--Mapper的配置
+    由于使用mybatis和Spring的整合包进行扫描，这里就不用配置了
+    必须遵循的：Mapper.xml和Mapper.java必须同名且在同一个包下
+    -->
+</configuration>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--可以扫描controller、service、
+    这里让扫描controller，指定controller包
+    -->
+    <context:component-scan base-package="cym.ssm.controller"></context:component-scan>
+
+    <!--注解映射器 -->
+    <!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/> -->
+    <!--注解适配器 -->
+    <!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> -->
+
+
+    <!-- 使用 mvc:annotation-driven代替上边注解映射器和注解适配器配置
+        mvc:annotation-driven默认加载很多的参数绑定方法，
+        比如json转换解析器就默认加载了，如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter
+        实际开发时使用mvc:annotation-driven
+         -->
+<!--    <mvc:resources mapping="/WEB-INF/**" location=""/>-->
+
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+    <!--自定义参数绑定-->
+    <!--转换器-->
+
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--配置jsp路径的前缀-->
+      <!-- <property name="prefix" value="/WEB-INF/"></property>-->
+        <!--配置jsp后缀-->
+     </bean>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+
+       <!--转换器-->
+        <property name="converters">
+            <!--日期转换类型-->
+            <bean class="cym.ssm.converter.CustomDateConverter"></bean>
+        </property>
+    </bean>
+</beans>
