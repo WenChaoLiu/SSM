@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cym.ssm.mapper.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="cym.ssm.po.Goods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="goods_max_num" property="goodsMaxNum" jdbcType="INTEGER" />
+    <result column="goods_min_num" property="goodsMinNum" jdbcType="INTEGER" />
+    <result column="goods_price" property="goodsPrice" jdbcType="DOUBLE" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="goods_unit" property="goodsUnit" jdbcType="VARCHAR" />
+    <result column="goods_amnout" property="goodsAmnout" jdbcType="INTEGER" />
+    <result column="goods_isDelete" property="goodsIsdelete" jdbcType="BIT" />
+    <result column="goods_imgPath" property="goodsImgpath" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cym.ssm.po.Goods" extends="BaseResultMap" >
+    <result column="goods_description" property="goodsDescription" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, goods_name, goods_max_num, goods_min_num, goods_price, category_id, goods_unit, 
+    goods_amnout, goods_isDelete, goods_imgPath
+  </sql>
+  <sql id="Blob_Column_List" >
+    goods_description
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cym.ssm.po.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cym.ssm.po.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cym.ssm.po.GoodsExample" >
+    delete from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cym.ssm.po.Goods" >
+    insert into goods (id, goods_name, goods_max_num, 
+      goods_min_num, goods_price, category_id, 
+      goods_unit, goods_amnout, goods_isDelete, 
+      goods_imgPath, goods_description)
+    values (#{id,jdbcType=INTEGER}, #{goodsName,jdbcType=VARCHAR}, #{goodsMaxNum,jdbcType=INTEGER}, 
+      #{goodsMinNum,jdbcType=INTEGER}, #{goodsPrice,jdbcType=DOUBLE}, #{categoryId,jdbcType=INTEGER}, 
+      #{goodsUnit,jdbcType=VARCHAR}, #{goodsAmnout,jdbcType=INTEGER}, #{goodsIsdelete,jdbcType=BIT}, 
+      #{goodsImgpath,jdbcType=VARCHAR}, #{goodsDescription,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cym.ssm.po.Goods" >
+    insert into goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsName != null" >
+        goods_name,
+      </if>
+      <if test="goodsMaxNum != null" >
+        goods_max_num,
+      </if>
+      <if test="goodsMinNum != null" >
+        goods_min_num,
+      </if>
+      <if test="goodsPrice != null" >
+        goods_price,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="goodsUnit != null" >
+        goods_unit,
+      </if>
+      <if test="goodsAmnout != null" >
+        goods_amnout,
+      </if>
+      <if test="goodsIsdelete != null" >
+        goods_isDelete,
+      </if>
+      <if test="goodsImgpath != null" >
+        goods_imgPath,
+      </if>
+      <if test="goodsDescription != null" >
+        goods_description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsMaxNum != null" >
+        #{goodsMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="goodsMinNum != null" >
+        #{goodsMinNum,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null" >
+        #{goodsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsUnit != null" >
+        #{goodsUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsAmnout != null" >
+        #{goodsAmnout,jdbcType=INTEGER},
+      </if>
+      <if test="goodsIsdelete != null" >
+        #{goodsIsdelete,jdbcType=BIT},
+      </if>
+      <if test="goodsImgpath != null" >
+        #{goodsImgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDescription != null" >
+        #{goodsDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cym.ssm.po.GoodsExample" resultType="java.lang.Integer" >
+    select count(*) from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update goods
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsName != null" >
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsMaxNum != null" >
+        goods_max_num = #{record.goodsMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsMinNum != null" >
+        goods_min_num = #{record.goodsMinNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsPrice != null" >
+        goods_price = #{record.goodsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.categoryId != null" >
+        category_id = #{record.categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsUnit != null" >
+        goods_unit = #{record.goodsUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsAmnout != null" >
+        goods_amnout = #{record.goodsAmnout,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsIsdelete != null" >
+        goods_isDelete = #{record.goodsIsdelete,jdbcType=BIT},
+      </if>
+      <if test="record.goodsImgpath != null" >
+        goods_imgPath = #{record.goodsImgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsDescription != null" >
+        goods_description = #{record.goodsDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update goods
+    set id = #{record.id,jdbcType=INTEGER},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_max_num = #{record.goodsMaxNum,jdbcType=INTEGER},
+      goods_min_num = #{record.goodsMinNum,jdbcType=INTEGER},
+      goods_price = #{record.goodsPrice,jdbcType=DOUBLE},
+      category_id = #{record.categoryId,jdbcType=INTEGER},
+      goods_unit = #{record.goodsUnit,jdbcType=VARCHAR},
+      goods_amnout = #{record.goodsAmnout,jdbcType=INTEGER},
+      goods_isDelete = #{record.goodsIsdelete,jdbcType=BIT},
+      goods_imgPath = #{record.goodsImgpath,jdbcType=VARCHAR},
+      goods_description = #{record.goodsDescription,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update goods
+    set id = #{record.id,jdbcType=INTEGER},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_max_num = #{record.goodsMaxNum,jdbcType=INTEGER},
+      goods_min_num = #{record.goodsMinNum,jdbcType=INTEGER},
+      goods_price = #{record.goodsPrice,jdbcType=DOUBLE},
+      category_id = #{record.categoryId,jdbcType=INTEGER},
+      goods_unit = #{record.goodsUnit,jdbcType=VARCHAR},
+      goods_amnout = #{record.goodsAmnout,jdbcType=INTEGER},
+      goods_isDelete = #{record.goodsIsdelete,jdbcType=BIT},
+      goods_imgPath = #{record.goodsImgpath,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cym.ssm.po.Goods" >
+    update goods
+    <set >
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsMaxNum != null" >
+        goods_max_num = #{goodsMaxNum,jdbcType=INTEGER},
+      </if>
+      <if test="goodsMinNum != null" >
+        goods_min_num = #{goodsMinNum,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null" >
+        goods_price = #{goodsPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsUnit != null" >
+        goods_unit = #{goodsUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsAmnout != null" >
+        goods_amnout = #{goodsAmnout,jdbcType=INTEGER},
+      </if>
+      <if test="goodsIsdelete != null" >
+        goods_isDelete = #{goodsIsdelete,jdbcType=BIT},
+      </if>
+      <if test="goodsImgpath != null" >
+        goods_imgPath = #{goodsImgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDescription != null" >
+        goods_description = #{goodsDescription,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cym.ssm.po.Goods" >
+    update goods
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_max_num = #{goodsMaxNum,jdbcType=INTEGER},
+      goods_min_num = #{goodsMinNum,jdbcType=INTEGER},
+      goods_price = #{goodsPrice,jdbcType=DOUBLE},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      goods_unit = #{goodsUnit,jdbcType=VARCHAR},
+      goods_amnout = #{goodsAmnout,jdbcType=INTEGER},
+      goods_isDelete = #{goodsIsdelete,jdbcType=BIT},
+      goods_imgPath = #{goodsImgpath,jdbcType=VARCHAR},
+      goods_description = #{goodsDescription,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cym.ssm.po.Goods" >
+    update goods
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_max_num = #{goodsMaxNum,jdbcType=INTEGER},
+      goods_min_num = #{goodsMinNum,jdbcType=INTEGER},
+      goods_price = #{goodsPrice,jdbcType=DOUBLE},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      goods_unit = #{goodsUnit,jdbcType=VARCHAR},
+      goods_amnout = #{goodsAmnout,jdbcType=INTEGER},
+      goods_isDelete = #{goodsIsdelete,jdbcType=BIT},
+      goods_imgPath = #{goodsImgpath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

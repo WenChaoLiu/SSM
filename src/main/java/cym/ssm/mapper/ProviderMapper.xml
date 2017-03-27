@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cym.ssm.mapper.ProviderMapper" >
+  <resultMap id="BaseResultMap" type="cym.ssm.po.Provider" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="provider_name" property="providerName" jdbcType="VARCHAR" />
+    <result column="provider_address" property="providerAddress" jdbcType="VARCHAR" />
+    <result column="provider_linkmale" property="providerLinkmale" jdbcType="VARCHAR" />
+    <result column="provider_tel" property="providerTel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, provider_name, provider_address, provider_linkmale, provider_tel
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cym.ssm.po.ProviderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from provider
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from provider
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from provider
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cym.ssm.po.ProviderExample" >
+    delete from provider
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cym.ssm.po.Provider" >
+    insert into provider (id, provider_name, provider_address, 
+      provider_linkmale, provider_tel)
+    values (#{id,jdbcType=INTEGER}, #{providerName,jdbcType=VARCHAR}, #{providerAddress,jdbcType=VARCHAR}, 
+      #{providerLinkmale,jdbcType=VARCHAR}, #{providerTel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cym.ssm.po.Provider" >
+    insert into provider
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="providerName != null" >
+        provider_name,
+      </if>
+      <if test="providerAddress != null" >
+        provider_address,
+      </if>
+      <if test="providerLinkmale != null" >
+        provider_linkmale,
+      </if>
+      <if test="providerTel != null" >
+        provider_tel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="providerName != null" >
+        #{providerName,jdbcType=VARCHAR},
+      </if>
+      <if test="providerAddress != null" >
+        #{providerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="providerLinkmale != null" >
+        #{providerLinkmale,jdbcType=VARCHAR},
+      </if>
+      <if test="providerTel != null" >
+        #{providerTel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cym.ssm.po.ProviderExample" resultType="java.lang.Integer" >
+    select count(*) from provider
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update provider
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.providerName != null" >
+        provider_name = #{record.providerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.providerAddress != null" >
+        provider_address = #{record.providerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.providerLinkmale != null" >
+        provider_linkmale = #{record.providerLinkmale,jdbcType=VARCHAR},
+      </if>
+      <if test="record.providerTel != null" >
+        provider_tel = #{record.providerTel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update provider
+    set id = #{record.id,jdbcType=INTEGER},
+      provider_name = #{record.providerName,jdbcType=VARCHAR},
+      provider_address = #{record.providerAddress,jdbcType=VARCHAR},
+      provider_linkmale = #{record.providerLinkmale,jdbcType=VARCHAR},
+      provider_tel = #{record.providerTel,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cym.ssm.po.Provider" >
+    update provider
+    <set >
+      <if test="providerName != null" >
+        provider_name = #{providerName,jdbcType=VARCHAR},
+      </if>
+      <if test="providerAddress != null" >
+        provider_address = #{providerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="providerLinkmale != null" >
+        provider_linkmale = #{providerLinkmale,jdbcType=VARCHAR},
+      </if>
+      <if test="providerTel != null" >
+        provider_tel = #{providerTel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cym.ssm.po.Provider" >
+    update provider
+    set provider_name = #{providerName,jdbcType=VARCHAR},
+      provider_address = #{providerAddress,jdbcType=VARCHAR},
+      provider_linkmale = #{providerLinkmale,jdbcType=VARCHAR},
+      provider_tel = #{providerTel,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

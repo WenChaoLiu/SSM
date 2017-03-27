@@ -13,7 +13,7 @@ public class LoginController {
     @RequestMapping("/login")
     public ModelAndView login() throws Exception{
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("/WEB-INF/page/login.jsp");
+        modelAndView.setViewName("page/login");
         return modelAndView;
     }
     @RequestMapping("/loginSuccess")
