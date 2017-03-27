@@ -26,14 +26,15 @@
     <header>
         <h1>仓库进销存后台管理系统</h1>
     </header>
+    <%--<%=request.getContextPath()%>/loginSuccess.action--%>
     <div class="login-main">
-        <form action="<%=request.getContextPath()%>/loginSuccess.action" class="layui-form" method="post">
+        <form action="validateUser.action" class="layui-form" method="post">
             <input name="__RequestVerificationToken" type="hidden" value="">
             <div class="layui-form-item">
                 <label class="login-icon">
                     <i class="layui-icon"></i>
                 </label>
-                <input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="这里输入登录名"
+                <input type="text" name="username" lay-verify="userName" autocomplete="off" placeholder="这里输入登录名"
                        class="layui-input">
             </div>
             <div class="layui-form-item">
@@ -63,13 +64,7 @@
         <p>xuan © www.mycodes.net</p>
     </footer>
 </div>
-<script type="text/html" id="code-temp">
-    <div class="login-code-box">
-        <input type="text" class="layui-input" id="code"/>
-        <img id="valiCode" src="/manage/validatecode?v=636150612041789540" alt="验证码"/>
-    </div>
-</script>
-<script src="../common/layui/layui.js"></script>
+<script src="<%=basePath%>/common/layui/layui.js"></script>
 <script>
     layui.use(['layer', 'form'], function () {
         var layer = layui.layer,
@@ -86,59 +81,7 @@
                     return '请输入密码';
             }
         });
-
-        var errorCount = 0;
-
-        form.on('submit(login)', function (data) {
-            window.location.href = "" +
-                    ".jsp";
-            if (errorCount > 5) {
-                layer.open({
-                    title: '<img src="' + location.origin + '/Plugins/layui/images/face/7.gif" alt="[害羞]">输入验证码',
-                    type: 1,
-                    content: document.getElementById('code-temp').innerHTML,
-                    btn: ['确定'],
-                    yes: function (index, layero) {
-                        var $code = $('#code');
-                        if ($code.val() === '') {
-                            layer.msg('输入验证码啦，让我知道你是人类。');
-                            isCheck = false;
-                        } else {
-                            $('input[name=verifyCode]').val();
-                            var params = data.field;
-                            params.verifyCode = $code.val();
-                            submit($, params);
-                            layer.close(index);
-                        }
-                    },
-                    area: ['250px', '150px']
-                });
-                $('#valiCode').off('click').on('click', function () {
-                    this.src = '/manage/validatecode?v=' + new Date().getTime();
-                });
-            } else {
-                submit($, data.field);
-            }
-
-            return false;
-        });
     });
-
-    function submit($,params){
-     $.post('loginSuccess.action',params , function (res) {
-     if (!res.success) {
-     if (res.data !== undefined)
-     errorCount = res.data.errorCount
-     layer.msg(res.message,{icon:2});
-     }else
-     {
-     layer.msg(res.message,{icon:1},function(index){
-     layer.close(index);
-     location.href='/manage';
-     });
-     }
-     }, 'json');
-     }
 </script>
 </body>
 </html>
