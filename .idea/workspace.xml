@@ -2,65 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53087b2f-b4d2-4b46-a66e-976606f3ccfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/CategoryMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/CategoryMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/ClientMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/ClientMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/GoodsMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/GoodsMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrderReturnMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrderReturnMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrderdetailMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrderdetailMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrdersMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/OrdersMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/ProviderMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/ProviderMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseDetailMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseDetailMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseListMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseListMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseReturnMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/PurchaseReturnMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/TUserMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/mapper/TUserMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Category.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/CategoryExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/ClientExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Goods.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/GoodsExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/OrderReturn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/OrderReturnExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Orderdetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/OrderdetailExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Orders.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/OrdersExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/Provider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/ProviderExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseDetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseDetailExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseListExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseReturn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/PurchaseReturnExample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/TUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/po/TUserExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SSM_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SSM_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SSM.iml" afterPath="$PROJECT_DIR$/SSM.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cym/ssm/converter/CustomDateConverter.java" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/converter/CustomDateConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/SpringMVC.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/SpringMVC.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/css/sccl.css" afterPath="$PROJECT_DIR$/src/main/webapp/common/css/sccl.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/home.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/index.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/login.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/test1.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/test1.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/test2.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/test2.jsp" />
     </list>
     <ignored path="SSM.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1270,7 +1212,7 @@
       <workItem from="1490609982443" duration="6214000" />
       <workItem from="1490621397043" duration="1069000" />
       <workItem from="1490622979469" duration="248000" />
-      <workItem from="1490623294448" duration="932000" />
+      <workItem from="1490623294448" duration="975000" />
     </task>
     <task id="LOCAL-00001" summary="add some rush">
       <created>1490527936626</created>
@@ -1279,11 +1221,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490527936626</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add some rush">
+      <created>1490624270691</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1490624270691</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45982000" />
+    <option name="totallyTimeSpent" value="46025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="3" width="1932" height="1056" extended-state="0" />
