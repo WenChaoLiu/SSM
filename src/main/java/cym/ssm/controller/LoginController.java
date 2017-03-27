@@ -19,14 +19,13 @@ public class LoginController {
     @RequestMapping("/loginSuccess")
     public ModelAndView loginSuccess() throws Exception{
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("/WEB-INF/page/index.jsp");
+        modelAndView.setViewName("/page/index");
         return modelAndView;
     }
     @RequestMapping("/home")
     public ModelAndView home() throws Exception{
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("/WEB-INF/page/home.jsp");
+        modelAndView.setViewName("/page/home");
         return modelAndView;
     }
-
 }
