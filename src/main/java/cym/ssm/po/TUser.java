@@ -5,13 +5,11 @@ public class TUser {
 
     private String username;
 
-    private String loginname;
-
-    private String loginpassword;
-
-    private Integer identity;
+    private String password;
 
     private String tel;
+
+    private Integer identity;
 
     public Integer getId() {
         return id;
@@ -29,28 +27,12 @@ public class TUser {
         this.username = username == null ? null : username.trim();
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getPassword() {
+        return password;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
-    }
-
-    public String getLoginpassword() {
-        return loginpassword;
-    }
-
-    public void setLoginpassword(String loginpassword) {
-        this.loginpassword = loginpassword == null ? null : loginpassword.trim();
-    }
-
-    public Integer getIdentity() {
-        return identity;
-    }
-
-    public void setIdentity(Integer identity) {
-        this.identity = identity;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public String getTel() {
@@ -59,5 +41,13 @@ public class TUser {
 
     public void setTel(String tel) {
         this.tel = tel == null ? null : tel.trim();
+    }
+
+    public Integer getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(Integer identity) {
+        this.identity = identity;
     }
 }

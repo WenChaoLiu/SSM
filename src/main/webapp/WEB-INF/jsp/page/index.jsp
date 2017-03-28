@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,21 +16,25 @@
         String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
                 + path + "/";
     %>
-
     <link rel="stylesheet" href="<%=basePath%>/common/css/sccl.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/common/skin/qingxin/skin.css" id="layout-skin"/>
-
 </head>
 
 <body>
 <div class="layout-admin">
     <header class="layout-header">
-        <span class="header-logo">系统框架</span>
+        <span class="header-logo">仓库进销存管理系统</span>
         <a class="header-menu-btn" href="javascript:;"><i class="icon-font">&#xe600;</i></a>
         <ul class="header-bar">
-            <li class="header-bar-role"><a href="javascript:;">超级管理员</a></li>
+            <li class="header-bar-role"><a href="javascript:;">
+                <c:choose>
+                    <c:when test="${login.identity eq 1}">普通用户</c:when>
+                    <c:when test="${login.identity eq 0}">超级管理员</c:when>
+                </c:choose>
+            </a></li>
             <li class="header-bar-nav">
-                <a href="javascript:;">admin<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
+                <a href="javascript:;">${loginUser.username}<i class="icon-font" style="margin-left:5px;">
+                    &#xe60c;</i></a>
                 <ul class="header-dropdown-menu">
                     <li><a href="javascript:;">个人信息</a></li>
                     <li><a href="javascript:;">切换账户</a></li>

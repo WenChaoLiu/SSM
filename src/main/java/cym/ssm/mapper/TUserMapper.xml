@@ -4,10 +4,9 @@
   <resultMap id="BaseResultMap" type="cym.ssm.po.TUser" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
-    <result column="loginname" property="loginname" jdbcType="VARCHAR" />
-    <result column="loginpassword" property="loginpassword" jdbcType="VARCHAR" />
-    <result column="identity" property="identity" jdbcType="INTEGER" />
+    <result column="password" property="password" jdbcType="VARCHAR"/>
     <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="identity" property="identity" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, loginname, loginpassword, identity, tel
+    id, username, password, tel, identity
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cym.ssm.po.TUserExample" >
     select
@@ -101,12 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cym.ssm.po.TUser" >
-    insert into t_user (id, username, loginname, 
-      loginpassword, identity, tel
-      )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
-      #{loginpassword,jdbcType=VARCHAR}, #{identity,jdbcType=INTEGER}, #{tel,jdbcType=VARCHAR}
-      )
+    insert into t_user (id, username, password,
+    tel, identity)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    #{tel,jdbcType=VARCHAR}, #{identity,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cym.ssm.po.TUser" >
     insert into t_user
@@ -117,17 +114,14 @@
       <if test="username != null" >
         username,
       </if>
-      <if test="loginname != null" >
-        loginname,
+      <if test="password != null">
+        password,
       </if>
-      <if test="loginpassword != null" >
-        loginpassword,
+      <if test="tel != null">
+        tel,
       </if>
       <if test="identity != null" >
         identity,
-      </if>
-      <if test="tel != null" >
-        tel,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -137,17 +131,14 @@
       <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="loginname != null" >
-        #{loginname,jdbcType=VARCHAR},
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
       </if>
-      <if test="loginpassword != null" >
-        #{loginpassword,jdbcType=VARCHAR},
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
       </if>
       <if test="identity != null" >
         #{identity,jdbcType=INTEGER},
-      </if>
-      <if test="tel != null" >
-        #{tel,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -166,17 +157,14 @@
       <if test="record.username != null" >
         username = #{record.username,jdbcType=VARCHAR},
       </if>
-      <if test="record.loginname != null" >
-        loginname = #{record.loginname,jdbcType=VARCHAR},
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.loginpassword != null" >
-        loginpassword = #{record.loginpassword,jdbcType=VARCHAR},
+      <if test="record.tel != null">
+        tel = #{record.tel,jdbcType=VARCHAR},
       </if>
       <if test="record.identity != null" >
         identity = #{record.identity,jdbcType=INTEGER},
-      </if>
-      <if test="record.tel != null" >
-        tel = #{record.tel,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -187,10 +175,9 @@
     update t_user
     set id = #{record.id,jdbcType=INTEGER},
       username = #{record.username,jdbcType=VARCHAR},
-      loginname = #{record.loginname,jdbcType=VARCHAR},
-      loginpassword = #{record.loginpassword,jdbcType=VARCHAR},
-      identity = #{record.identity,jdbcType=INTEGER},
-      tel = #{record.tel,jdbcType=VARCHAR}
+    password = #{record.password,jdbcType=VARCHAR},
+    tel = #{record.tel,jdbcType=VARCHAR},
+    identity = #{record.identity,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -201,17 +188,14 @@
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="loginname != null" >
-        loginname = #{loginname,jdbcType=VARCHAR},
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="loginpassword != null" >
-        loginpassword = #{loginpassword,jdbcType=VARCHAR},
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
       </if>
       <if test="identity != null" >
         identity = #{identity,jdbcType=INTEGER},
-      </if>
-      <if test="tel != null" >
-        tel = #{tel,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -219,10 +203,9 @@
   <update id="updateByPrimaryKey" parameterType="cym.ssm.po.TUser" >
     update t_user
     set username = #{username,jdbcType=VARCHAR},
-      loginname = #{loginname,jdbcType=VARCHAR},
-      loginpassword = #{loginpassword,jdbcType=VARCHAR},
-      identity = #{identity,jdbcType=INTEGER},
-      tel = #{tel,jdbcType=VARCHAR}
+    password = #{password,jdbcType=VARCHAR},
+    tel = #{tel,jdbcType=VARCHAR},
+    identity = #{identity,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

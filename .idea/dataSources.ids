@@ -404,23 +404,19 @@
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="107" parent="12" name="loginname">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="108" parent="12" name="loginpassword">
+      <column id="107" parent="12" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(15)</data-type>
+      </column>
+      <column id="108" parent="12" name="tel">
+        <data-type>varchar(11)</data-type>
       </column>
       <column id="109" parent="12" name="identity">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <column id="110" parent="12" name="tel">
-        <data-type>varchar(11)</data-type>
-      </column>
-      <key id="111" parent="12" name="PRIMARY">
+      <key id="110" parent="12" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

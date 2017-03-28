@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="SSM:war exploded">
-    <output-path>$PROJECT_DIR$/target/SSM</output-path>
+    <output-path>D:/apache-tomact/apache-tomcat-9.0.0.M11/webapps/SSM</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -39,11 +39,7 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.5.4" />
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/SSM/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="SSM/web/Web" />
     </root>
