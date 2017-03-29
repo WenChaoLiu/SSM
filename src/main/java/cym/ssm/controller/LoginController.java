@@ -41,4 +41,11 @@ public class LoginController {
         }
         return "page/login";
     }
+
+    @RequestMapping("/home")
+    public ModelAndView toHome() throws Exception {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("page/home");
+        return modelAndView;
+    }
 }

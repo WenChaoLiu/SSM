@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="SSM:war">
-    <output-path>D:/apache-tomact/apache-tomcat-9.0.0.M11/webapps/SSM</output-path>
+  <artifact type="war" name="ssm:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="SSM.war">
-      <element id="artifact" artifact-name="SSM:war exploded" />
+      <element id="artifact" artifact-name="ssm:war exploded" />
     </root>
   </artifact>
 </component>

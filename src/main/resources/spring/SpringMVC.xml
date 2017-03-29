@@ -4,7 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
     <!--可以扫描controller、service、
@@ -23,7 +28,7 @@
         比如json转换解析器就默认加载了，如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter
         实际开发时使用mvc:annotation-driven
          -->
-<!--    <mvc:resources mapping="/WEB-INF/**" location=""/>-->
+    <!--    <mvc:resources mapping="/WEB-INF/**" location=""/>-->
 
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
     <!--自定义参数绑定-->
@@ -35,14 +40,23 @@
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <!--配置jsp后缀-->
         <property name="suffix" value=".jsp"></property>
-     </bean>
+    </bean>
 
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 
-       <!--转换器-->
+        <!--转换器-->
         <property name="converters">
             <!--日期转换类型-->
             <bean class="cym.ssm.converter.CustomDateConverter"></bean>
         </property>
     </bean>
+    <!--拦截器-->
+    <mvc:interceptors>
+        <!--多个拦截器顺序执行-->
+        <!--登录验证拦截器-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cym.ssm.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

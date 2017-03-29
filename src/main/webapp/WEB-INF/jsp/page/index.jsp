@@ -8,8 +8,6 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <meta name="keywords" content="scclui框架">
-    <meta name="description" content="scclui为轻量级的网站后台管理系统模版。">
     <title>首页</title>
     <%
         String path = request.getContextPath();
@@ -24,29 +22,29 @@
 <div class="layout-admin">
     <header class="layout-header">
         <span class="header-logo">仓库进销存管理系统</span>
-        <a class="header-menu-btn" href="javascript:;"><i class="icon-font">&#xe600;</i></a>
+        <a class="header-menu-btn" href="javascript:"><i class="icon-font">&#xe600;</i></a>
         <ul class="header-bar">
-            <li class="header-bar-role"><a href="javascript:;">
+            <li class="header-bar-role"><a href="javascript:">
                 <c:choose>
                     <c:when test="${login.identity eq 1}">普通用户</c:when>
                     <c:when test="${login.identity eq 0}">超级管理员</c:when>
                 </c:choose>
             </a></li>
             <li class="header-bar-nav">
-                <a href="javascript:;">${loginUser.username}<i class="icon-font" style="margin-left:5px;">
+                <a href="javascript:">${loginUser.username}<i class="icon-font" style="margin-left:5px;">
                     &#xe60c;</i></a>
                 <ul class="header-dropdown-menu">
-                    <li><a href="javascript:;">个人信息</a></li>
-                    <li><a href="javascript:;">切换账户</a></li>
-                    <li><a href="javascript:;">退出</a></li>
+                    <li><a href="javascript:">个人信息</a></li>
+                    <li><a href="javascript:">切换账户</a></li>
+                    <li><a href="javascript:">退出</a></li>
                 </ul>
             </li>
             <li class="header-bar-nav">
-                <a href="javascript:;" title="换肤"><i class="icon-font">&#xe608;</i></a>
+                <a href="javascript:" title="换肤"><i class="icon-font">&#xe608;</i></a>
                 <ul class="header-dropdown-menu right dropdown-skin">
-                    <li><a href="javascript:;" data-val="qingxin" title="清新">清新</a></li>
-                    <li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
-                    <li><a href="javascript:;" data-val="molv" title="墨绿">墨绿</a></li>
+                    <li><a href="javascript:" data-val="qingxin" title="清新">清新</a></li>
+                    <li><a href="javascript:" data-val="blue" title="蓝色">蓝色</a></li>
+                    <li><a href="javascript:" data-val="molv" title="墨绿">墨绿</a></li>
 
                 </ul>
             </li>
@@ -54,10 +52,8 @@
     </header>
     <aside class="layout-side">
         <ul class="side-menu">
-
         </ul>
     </aside>
-
     <div class="layout-side-arrow">
         <div class="layout-side-arrow-icon"><i class="icon-font">&#xe60d;</i></div>
     </div>
@@ -67,7 +63,7 @@
             <button class="tab-btn btn-left"><i class="icon-font">&#xe60e;</i></button>
             <nav class="tab-nav">
                 <div class="tab-nav-content">
-                    <a href="javascript:;" class="content-tab active" data-id="home.html">首页</a>
+                    <a href="javascript:" class="content-tab active" data-id="home.html">首页</a>
                 </div>
             </nav>
             <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
