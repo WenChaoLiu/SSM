@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccaf1016-cf5f-4f12-ab5f-6c5e37274ee7" name="Default" comment="实现了拦截器用户的登录">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/interceptor/LoginInterceptor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SSM_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SSM_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SSM_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SSM_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/SpringMVC.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/SpringMVC.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/css/sccl.css" afterPath="$PROJECT_DIR$/src/main/webapp/common/css/sccl.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/js/sccl.js" afterPath="$PROJECT_DIR$/src/main/webapp/common/js/sccl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/layui/lay/all.js" afterPath="$PROJECT_DIR$/src/main/webapp/common/layui/lay/all.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SSM.iml" afterPath="$PROJECT_DIR$/ssm.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,7 +52,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sccl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sccl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/common/js/sccl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
@@ -136,14 +116,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="12" />
-              <folding>
-                <element signature="method#validateUser#0;class#LoginController#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="626">
+              <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/page/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cym/ssm/interceptor/LoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java" />
       </list>
     </option>
   </component>
@@ -743,7 +722,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
     <property name="last_opened_file_path" value="D:/apache-tomact/apache-tomcat-9.0.0.M11/webapps/SSM" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
@@ -1008,12 +987,20 @@
       <workItem from="1490760839609" duration="3408000" />
       <workItem from="1490783633562" duration="526000" />
       <workItem from="1490784195208" duration="1957000" />
-      <workItem from="1490786921928" duration="1567000" />
+      <workItem from="1490786921928" duration="2026000" />
     </task>
+    <task id="LOCAL-00001" summary="实现了拦截器用户的登录">
+      <created>1490788938677</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1490788938677</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7458000" />
+    <option name="totallyTimeSpent" value="7917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1093,8 +1080,14 @@
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1179,9 +1172,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
           <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding>
-            <element signature="method#validateUser#0;class#LoginController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,9 +1256,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1196">
           <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding>
-            <element signature="method#validateUser#0;class#LoginController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,9 +1332,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1196">
           <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding>
-            <element signature="method#validateUser#0;class#LoginController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1489,16 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="12" />
-          <folding>
-            <element signature="method#validateUser#0;class#LoginController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cym/ssm/converter/CustomDateConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1532,6 +1509,14 @@
             <marker date="1490788882282" expanded="true" signature="2232:2240" ph="&amp;##xe617;" />
             <marker date="1490788882282" expanded="true" signature="10215:10223" ph="&amp;##xe60b;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cym/ssm/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
