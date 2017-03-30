@@ -6,7 +6,13 @@
     <result column="client_name" property="clientName" jdbcType="VARCHAR" />
     <result column="client_address" property="clientAddress" jdbcType="VARCHAR" />
     <result column="client_tel" property="clientTel" jdbcType="VARCHAR" />
-    <result column="client_sex" property="clientSex" jdbcType="VARCHAR" />
+    <result column="client_sex" property="clientSex" jdbcType="CHAR"/>
+    <result column="client_email" property="clientEmail" jdbcType="VARCHAR"/>
+    <result column="client_type" property="clientType" jdbcType="VARCHAR"/>
+    <result column="client_business" property="clientBusiness" jdbcType="VARCHAR"/>
+    <result column="client_addtime" property="clientAddtime" jdbcType="TIMESTAMP"/>
+    <result column="client_mobile" property="clientMobile" jdbcType="VARCHAR"/>
+    <result column="client_isdel" property="clientIsdel" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, client_name, client_address, client_tel, client_sex
+    id, client_name, client_address, client_tel, client_sex, client_email, client_type,
+    client_business, client_addtime, client_mobile, client_isdel
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cym.ssm.po.ClientExample" >
     select
@@ -100,10 +107,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cym.ssm.po.Client" >
-    insert into client (id, client_name, client_address, 
-      client_tel, client_sex)
-    values (#{id,jdbcType=INTEGER}, #{clientName,jdbcType=VARCHAR}, #{clientAddress,jdbcType=VARCHAR}, 
-      #{clientTel,jdbcType=VARCHAR}, #{clientSex,jdbcType=VARCHAR})
+    insert into client (id, client_name, client_address,
+    client_tel, client_sex, client_email,
+    client_type, client_business, client_addtime,
+    client_mobile, client_isdel)
+    values (#{id,jdbcType=INTEGER}, #{clientName,jdbcType=VARCHAR}, #{clientAddress,jdbcType=VARCHAR},
+    #{clientTel,jdbcType=VARCHAR}, #{clientSex,jdbcType=CHAR}, #{clientEmail,jdbcType=VARCHAR},
+    #{clientType,jdbcType=VARCHAR}, #{clientBusiness,jdbcType=VARCHAR}, #{clientAddtime,jdbcType=TIMESTAMP},
+    #{clientMobile,jdbcType=VARCHAR}, #{clientIsdel,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cym.ssm.po.Client" >
     insert into client
@@ -123,6 +134,24 @@
       <if test="clientSex != null" >
         client_sex,
       </if>
+      <if test="clientEmail != null">
+        client_email,
+      </if>
+      <if test="clientType != null">
+        client_type,
+      </if>
+      <if test="clientBusiness != null">
+        client_business,
+      </if>
+      <if test="clientAddtime != null">
+        client_addtime,
+      </if>
+      <if test="clientMobile != null">
+        client_mobile,
+      </if>
+      <if test="clientIsdel != null">
+        client_isdel,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -138,7 +167,25 @@
         #{clientTel,jdbcType=VARCHAR},
       </if>
       <if test="clientSex != null" >
-        #{clientSex,jdbcType=VARCHAR},
+        #{clientSex,jdbcType=CHAR},
+      </if>
+      <if test="clientEmail != null">
+        #{clientEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientBusiness != null">
+        #{clientBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="clientAddtime != null">
+        #{clientAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientMobile != null">
+        #{clientMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="clientIsdel != null">
+        #{clientIsdel,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -164,7 +211,25 @@
         client_tel = #{record.clientTel,jdbcType=VARCHAR},
       </if>
       <if test="record.clientSex != null" >
-        client_sex = #{record.clientSex,jdbcType=VARCHAR},
+        client_sex = #{record.clientSex,jdbcType=CHAR},
+      </if>
+      <if test="record.clientEmail != null">
+        client_email = #{record.clientEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientType != null">
+        client_type = #{record.clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientBusiness != null">
+        client_business = #{record.clientBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientAddtime != null">
+        client_addtime = #{record.clientAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.clientMobile != null">
+        client_mobile = #{record.clientMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clientIsdel != null">
+        client_isdel = #{record.clientIsdel,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -177,7 +242,13 @@
       client_name = #{record.clientName,jdbcType=VARCHAR},
       client_address = #{record.clientAddress,jdbcType=VARCHAR},
       client_tel = #{record.clientTel,jdbcType=VARCHAR},
-      client_sex = #{record.clientSex,jdbcType=VARCHAR}
+    client_sex = #{record.clientSex,jdbcType=CHAR},
+    client_email = #{record.clientEmail,jdbcType=VARCHAR},
+    client_type = #{record.clientType,jdbcType=VARCHAR},
+    client_business = #{record.clientBusiness,jdbcType=VARCHAR},
+    client_addtime = #{record.clientAddtime,jdbcType=TIMESTAMP},
+    client_mobile = #{record.clientMobile,jdbcType=VARCHAR},
+    client_isdel = #{record.clientIsdel,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -195,7 +266,25 @@
         client_tel = #{clientTel,jdbcType=VARCHAR},
       </if>
       <if test="clientSex != null" >
-        client_sex = #{clientSex,jdbcType=VARCHAR},
+        client_sex = #{clientSex,jdbcType=CHAR},
+      </if>
+      <if test="clientEmail != null">
+        client_email = #{clientEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="clientType != null">
+        client_type = #{clientType,jdbcType=VARCHAR},
+      </if>
+      <if test="clientBusiness != null">
+        client_business = #{clientBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="clientAddtime != null">
+        client_addtime = #{clientAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clientMobile != null">
+        client_mobile = #{clientMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="clientIsdel != null">
+        client_isdel = #{clientIsdel,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -205,7 +294,13 @@
     set client_name = #{clientName,jdbcType=VARCHAR},
       client_address = #{clientAddress,jdbcType=VARCHAR},
       client_tel = #{clientTel,jdbcType=VARCHAR},
-      client_sex = #{clientSex,jdbcType=VARCHAR}
+    client_sex = #{clientSex,jdbcType=CHAR},
+    client_email = #{clientEmail,jdbcType=VARCHAR},
+    client_type = #{clientType,jdbcType=VARCHAR},
+    client_business = #{clientBusiness,jdbcType=VARCHAR},
+    client_addtime = #{clientAddtime,jdbcType=TIMESTAMP},
+    client_mobile = #{clientMobile,jdbcType=VARCHAR},
+    client_isdel = #{clientIsdel,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

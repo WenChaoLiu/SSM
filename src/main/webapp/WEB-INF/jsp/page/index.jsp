@@ -26,8 +26,8 @@
         <ul class="header-bar">
             <li class="header-bar-role"><a href="javascript:">
                 <c:choose>
-                    <c:when test="${login.identity eq 1}">普通用户</c:when>
-                    <c:when test="${login.identity eq 0}">超级管理员</c:when>
+                    <c:when test="${loginUser.identity eq 1}">普通用户</c:when>
+                    <c:when test="${loginUser.identity eq 0}">超级管理员</c:when>
                 </c:choose>
             </a></li>
             <li class="header-bar-nav">
@@ -63,17 +63,17 @@
             <button class="tab-btn btn-left"><i class="icon-font">&#xe60e;</i></button>
             <nav class="tab-nav">
                 <div class="tab-nav-content">
-                    <a href="javascript:" class="content-tab active" data-id="home.html">首页</a>
+                    <a href="home.action" class="content-tab active" data-id="home.html">首页</a>
                 </div>
             </nav>
             <button class="tab-btn btn-right"><i class="icon-font">&#xe60f;</i></button>
         </div>
         <div class="layout-main-body">
-            <iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="/home.action" frameborder="0"
+            <iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="home.action" frameborder="0"
                     data-id="home.html" seamless></iframe>
         </div>
     </section>
-    <div class="layout-footer">@2016 0.1 www.mycodes.net</div>
+    <div class="layout-footer">@</div>
 </div>
 <script type="text/javascript" src="<%=basePath%>/common/lib/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>/common/js/sccl.js"></script>

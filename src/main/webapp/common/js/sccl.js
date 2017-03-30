@@ -391,7 +391,7 @@ function getMathColor() {
  */
 $(function () {
     /*获取皮肤*/
-    getSkinByCookie();
+   //getSkinByCookie();
 
     /*菜单json*/
     var menu = [{
@@ -409,7 +409,7 @@ $(function () {
                         "id": "4",
                         "name": "销售记录",
                         "parentId": "3",
-                        "url": "test1.html",
+                        "url": "home.action",
                         "icon": "",
                         "order": "1",
                         "isHeader": "0",
@@ -425,9 +425,18 @@ $(function () {
                         "isHeader": "0",
                         "childMenus": ""
                     }
+                    , {
+                        "id": "6",
+                        "name": "申请退货",
+                        "parentId": "3",
+                        "url": "test2.html",
+                        "icon": "",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": ""
+                    }
                 ]
             },
-
 
             {
                 "id": "4",
@@ -492,7 +501,73 @@ $(function () {
                         "childMenus": ""
                     }
                 ]
+            } ,
+            {
+                "id": "8",
+                "name": "商品管理",
+                "parentId": "1",
+                "url": "",
+                "icon": "&#xe602;",
+                "order": "1",
+                "isHeader": "0",
+                "childMenus": [
+                    {
+                        "id": "7",
+                        "name": "库存统计",
+                        "parentId": "6",
+                        "url": "home3.html",
+                        "icon": "",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": ""
+                    },
+                    {
+                        "id": "8",
+                        "name": "未付款",
+                        "parentId": "6",
+                        "url": "home4.html",
+                        "icon": "",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": ""
+                    }
+                ]
+            } ,
+
+
+
+            {
+                "id": "9",
+                "name": "客户管理",
+                "parentId": "1",
+                "url": "",
+                "icon": "&#xe602;",
+                "order": "1",
+                "isHeader": "0",
+                "childMenus": [
+                    {
+                        "id": "10",
+                        "name": "客户信息",
+                        "parentId": "9",
+                        "url": "client/toClientList.action",
+                        "icon": "",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": ""
+                    },
+                    {
+                        "id": "11",
+                        "name": "新增客户",
+                        "parentId": "9",
+                        "url": "home4.html",
+                        "icon": "",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": ""
+                    }
+                ]
             }
+
         ]
     },
 

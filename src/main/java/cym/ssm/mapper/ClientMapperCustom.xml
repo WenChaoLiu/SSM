@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cym.ssm.mapper.ClientMapperCustom">
+    <select id="findClientByBusiness" resultType="string">
+        SELECT DISTINCT client_business FROM client
+    </select>
+    <select id="findClientByType" resultType="string">
+        SELECT DISTINCT client_type
+        FROM client
+    </select>
+    <!--查询客户信息-->
+    <select id="findClientList" resultType="cym.ssm.po.ClientCustom" parameterType="cym.ssm.po.ClientQueryVo">
+        SELECT id,client_name AS clientName
+        ,client_business AS clientBusiness
+        ,client_type AS clientType
+        ,client_address AS clientAddress
+        ,client_email AS clientEmail
+        ,client_addtime AS clientAddtime
+        ,client_mobile AS clientMobile
+        ,client_sex AS clientSex
+        ,client_tel AS clientTel
+        ,client_isdel AS clientIsdel
+        FROM client
+        <include refid="client_where_list"></include>
+    </select>
+    <sql id="client_where_list">
+        <where>
+            <if test="clientCustom!=null">
+                <if test="clientCustom.clientName !=null and clientCustom.clientName!=''">
+                    AND client_name LIKE '%${clientCustom.clientName}%'
+                </if>
+                <if test="clientCustom.clientType !=null and clientCustom.clientType!=''">
+                    AND client_type=#{clientCustom.clientType}
+                </if>
+                <if test="clientCustom.clientBusiness !=null and clientCustom.clientBusiness!=''">
+                    AND client_business=#{clientCustom.clientBusiness}
+                </if>
+            </if>
+            AND client_isdel=1
+        </where>
+    </sql>
+
+    <!--更新客户信息-->
+    <update id="updateClient" parameterType="cym.ssm.po.ClientCustom">
+        UPDATE FROM client
+        <set>
+            <if test="clientName != null and clientName !=''">client_name=#{clientName}</if>
+            <if test="clientBusiness != null and clientBusiness !=''">client_business=#{clientBusiness}</if>
+            <if test="clientAddress != null and clientAddress !=''">client_address=#{clientAddress}</if>
+            <if test="clientTel != null and clientTel !=''">client_tel=#{clientTel}</if>
+            <if test="clientSex != null and clientSex !=''">client_sex=#{clientSex}</if>
+            <if test="clientEmail != null and clientEmail !=''">client_email=#{clientEmail}</if>
+            <if test="clientType != null and clientType !=''">client_type=#{clientType}</if>
+            <if test="clientMobile != null and clientMobile !=''">client_mobile=#{clientMobile}</if>
+        </set>
+    </update>
+</mapper>

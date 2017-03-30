@@ -1,6 +1,7 @@
 package cym.ssm.po;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ClientExample {
@@ -441,6 +442,406 @@ public class ClientExample {
 
         public Criteria andClientSexNotBetween(String value1, String value2) {
             addCriterion("client_sex not between", value1, value2, "clientSex");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailIsNull() {
+            addCriterion("client_email is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailIsNotNull() {
+            addCriterion("client_email is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailEqualTo(String value) {
+            addCriterion("client_email =", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailNotEqualTo(String value) {
+            addCriterion("client_email <>", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailGreaterThan(String value) {
+            addCriterion("client_email >", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailGreaterThanOrEqualTo(String value) {
+            addCriterion("client_email >=", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailLessThan(String value) {
+            addCriterion("client_email <", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailLessThanOrEqualTo(String value) {
+            addCriterion("client_email <=", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailLike(String value) {
+            addCriterion("client_email like", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailNotLike(String value) {
+            addCriterion("client_email not like", value, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailIn(List<String> values) {
+            addCriterion("client_email in", values, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailNotIn(List<String> values) {
+            addCriterion("client_email not in", values, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailBetween(String value1, String value2) {
+            addCriterion("client_email between", value1, value2, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientEmailNotBetween(String value1, String value2) {
+            addCriterion("client_email not between", value1, value2, "clientEmail");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeIsNull() {
+            addCriterion("client_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeIsNotNull() {
+            addCriterion("client_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeEqualTo(String value) {
+            addCriterion("client_type =", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeNotEqualTo(String value) {
+            addCriterion("client_type <>", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeGreaterThan(String value) {
+            addCriterion("client_type >", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("client_type >=", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeLessThan(String value) {
+            addCriterion("client_type <", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeLessThanOrEqualTo(String value) {
+            addCriterion("client_type <=", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeLike(String value) {
+            addCriterion("client_type like", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeNotLike(String value) {
+            addCriterion("client_type not like", value, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeIn(List<String> values) {
+            addCriterion("client_type in", values, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeNotIn(List<String> values) {
+            addCriterion("client_type not in", values, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeBetween(String value1, String value2) {
+            addCriterion("client_type between", value1, value2, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientTypeNotBetween(String value1, String value2) {
+            addCriterion("client_type not between", value1, value2, "clientType");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessIsNull() {
+            addCriterion("client_business is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessIsNotNull() {
+            addCriterion("client_business is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessEqualTo(String value) {
+            addCriterion("client_business =", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessNotEqualTo(String value) {
+            addCriterion("client_business <>", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessGreaterThan(String value) {
+            addCriterion("client_business >", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessGreaterThanOrEqualTo(String value) {
+            addCriterion("client_business >=", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessLessThan(String value) {
+            addCriterion("client_business <", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessLessThanOrEqualTo(String value) {
+            addCriterion("client_business <=", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessLike(String value) {
+            addCriterion("client_business like", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessNotLike(String value) {
+            addCriterion("client_business not like", value, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessIn(List<String> values) {
+            addCriterion("client_business in", values, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessNotIn(List<String> values) {
+            addCriterion("client_business not in", values, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessBetween(String value1, String value2) {
+            addCriterion("client_business between", value1, value2, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientBusinessNotBetween(String value1, String value2) {
+            addCriterion("client_business not between", value1, value2, "clientBusiness");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeIsNull() {
+            addCriterion("client_addtime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeIsNotNull() {
+            addCriterion("client_addtime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeEqualTo(Date value) {
+            addCriterion("client_addtime =", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeNotEqualTo(Date value) {
+            addCriterion("client_addtime <>", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeGreaterThan(Date value) {
+            addCriterion("client_addtime >", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("client_addtime >=", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeLessThan(Date value) {
+            addCriterion("client_addtime <", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeLessThanOrEqualTo(Date value) {
+            addCriterion("client_addtime <=", value, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeIn(List<Date> values) {
+            addCriterion("client_addtime in", values, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeNotIn(List<Date> values) {
+            addCriterion("client_addtime not in", values, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeBetween(Date value1, Date value2) {
+            addCriterion("client_addtime between", value1, value2, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientAddtimeNotBetween(Date value1, Date value2) {
+            addCriterion("client_addtime not between", value1, value2, "clientAddtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileIsNull() {
+            addCriterion("client_mobile is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileIsNotNull() {
+            addCriterion("client_mobile is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileEqualTo(String value) {
+            addCriterion("client_mobile =", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileNotEqualTo(String value) {
+            addCriterion("client_mobile <>", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileGreaterThan(String value) {
+            addCriterion("client_mobile >", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileGreaterThanOrEqualTo(String value) {
+            addCriterion("client_mobile >=", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileLessThan(String value) {
+            addCriterion("client_mobile <", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileLessThanOrEqualTo(String value) {
+            addCriterion("client_mobile <=", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileLike(String value) {
+            addCriterion("client_mobile like", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileNotLike(String value) {
+            addCriterion("client_mobile not like", value, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileIn(List<String> values) {
+            addCriterion("client_mobile in", values, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileNotIn(List<String> values) {
+            addCriterion("client_mobile not in", values, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileBetween(String value1, String value2) {
+            addCriterion("client_mobile between", value1, value2, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientMobileNotBetween(String value1, String value2) {
+            addCriterion("client_mobile not between", value1, value2, "clientMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelIsNull() {
+            addCriterion("client_isdel is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelIsNotNull() {
+            addCriterion("client_isdel is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelEqualTo(Integer value) {
+            addCriterion("client_isdel =", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelNotEqualTo(Integer value) {
+            addCriterion("client_isdel <>", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelGreaterThan(Integer value) {
+            addCriterion("client_isdel >", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelGreaterThanOrEqualTo(Integer value) {
+            addCriterion("client_isdel >=", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelLessThan(Integer value) {
+            addCriterion("client_isdel <", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelLessThanOrEqualTo(Integer value) {
+            addCriterion("client_isdel <=", value, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelIn(List<Integer> values) {
+            addCriterion("client_isdel in", values, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelNotIn(List<Integer> values) {
+            addCriterion("client_isdel not in", values, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelBetween(Integer value1, Integer value2) {
+            addCriterion("client_isdel between", value1, value2, "clientIsdel");
+            return (Criteria) this;
+        }
+
+        public Criteria andClientIsdelNotBetween(Integer value1, Integer value2) {
+            addCriterion("client_isdel not between", value1, value2, "clientIsdel");
             return (Criteria) this;
         }
     }
