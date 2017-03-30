@@ -61,7 +61,7 @@
         </form>
     </div>
     <footer>
-        <p>xuan © www.mycodes.net</p>
+        <p>@aaaaaaaaaaaa</p>
     </footer>
 </div>
 <script type="text/html" id="code-temp">

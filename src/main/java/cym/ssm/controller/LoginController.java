@@ -37,7 +37,7 @@ public class LoginController {
         if (tUserCustom != null) {
             if (username.equals(tUserCustom.getUsername()) && password.equals(tUserCustom.getPassword()))
                 session.setAttribute("loginUser", tUserCustom);
-            return "/page/index";
+            return "page/index";
         }
         return "page/login";
     }
@@ -52,7 +52,7 @@ public class LoginController {
     @RequestMapping("/test")
     public ModelAndView test() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("test");
+        modelAndView.setViewName("test/customer");
         return modelAndView;
     }
 }
