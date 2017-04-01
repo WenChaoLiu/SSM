@@ -16,7 +16,6 @@
 
     <!--<bean id="itemsService" class="cym.ssm.service.impl.ItemsServiceImpl"></bean>-->
     <!--  <context:component-scan base-package="cym.ssm.service"></context:component-scan>-->
-    <context:component-scan base-package="cym.ssm.service"></context:component-scan>
-    <!-- <bean id="userService" class="cym.ssm.service.impl.UserServiceImpl"></bean>-->
+    <bean id="userService" class="cym.ssm.service.impl.UserServiceImpl"></bean>
 
 </beans>
