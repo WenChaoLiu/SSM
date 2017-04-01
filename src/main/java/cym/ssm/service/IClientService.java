@@ -19,4 +19,7 @@ public interface IClientService {
     Client findClientById(Integer id) throws Exception;
 
     void updateClient(Client client, Integer update_id) throws Exception;
+    void deleteClient(Integer id) throws Exception;
+
+
 }

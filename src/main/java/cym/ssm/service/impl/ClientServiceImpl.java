@@ -50,4 +50,8 @@ public class ClientServiceImpl implements IClientService {
         clientMapper.updateByExampleSelective(client, example);
 
     }
+
+    public void deleteClient(Integer id) throws Exception {
+        clientMapperCustom.deleteClientById(id);
+    }
 }

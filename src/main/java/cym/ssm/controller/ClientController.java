@@ -58,4 +58,11 @@ public class ClientController {
         return "client/clientList";
     }
 
+
+    @RequestMapping("/delete")
+    public String deleteClient(Integer id) throws Exception {
+        clientService.deleteClient(id);
+        return "client/clientList";
+    }
+
 }

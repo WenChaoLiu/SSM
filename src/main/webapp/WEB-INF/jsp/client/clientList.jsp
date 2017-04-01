@@ -127,9 +127,38 @@
                                                 value="${row.clientAddtime}"></fmt:formatDate></td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal"
-                                   data-target="#customerEditDialog" onclick="editCustomer(${row.id})">修改</a>
-                                <a href="#" class="btn btn-danger btn-xs"
-                                   onclick="deleteCustomer(${row.id})">删除</a>
+                                   data-target="#clientEditDialog" onclick="editCustomer(${row.id})">修改</a>
+
+                                <a href="" class="btn btn-danger btn-xs"
+                                   data-toggle="modal"
+                                   data-target="#myModal">删除</a>
+                                    <%--删除对话框--%>
+                                <!-- 模态框（Modal） -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title" style="color: red">
+                                                    警告！！！
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                是否确定删除？
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary"   onclick="deleteCustomer(${row.id})">
+                                                    删除
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal -->
+                                </div>
+                                <!-- 模态框（Modal） end-->
                             </td>
                         </tr>
                     </c:forEach>
@@ -157,7 +186,7 @@
 </div>
 <%--END OF CLIENT LIST--%>
 <!-- 客户编辑对话框 -->
-<div class="modal fade" id="customerEditDialog" tabindex="-1" role="dialog"
+<div class="modal fade" id="clientEditDialog" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -194,10 +223,10 @@
                         <label for="edit_clientType" style="float:left;padding:7px 15px 0 27px;">客户级别</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="edit_clientType" name="clientType">
-                                <option value="">--请选择--</option>
+                                <option value=""></option>
                                 <c:forEach items="${TypeList}" var="item">
-                                    <option value="${item}"<c:if
-                                            test="${item == clientType}"> selected</c:if>>${item}</option>
+                                    <option value="${item}"
+                                            <c:if test="${item == clientType}"> selected</c:if>>${item}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -226,8 +255,10 @@
                     <div class="form-group">
                         <label for="edit_clientSex" class="col-sm-2 control-label">性别</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="edit_clientSex" placeholder="性别"
-                                   name="clientSex">
+                            <%-- <input type="text" class="form-control" id="edit_clientSex" placeholder="性别"
+                                       name="clientSex">--%>
+                            <input id="edit_clientSex" class="man" type="radio" value="男" name="clientSex"/>男
+                            <input id="edit_clientSex" class="woman" type="radio" value="女" name="clientSex"/>女
                         </div>
                     </div>
                     <div class="form-group">
@@ -246,6 +277,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 <!-- /#wrapper -->
 
 <!-- jQuery -->
@@ -278,7 +313,10 @@
                 $("#edit_clientMobile").val(data.clientMobile);
                 $("#edit_clientTel").val(data.clientTel);
                 $("#edit_clientEmail").val(data.clientEmail);
-                $("#edit_clientSex").val(data.clientSex);
+                if (data.clientSex == '女')
+                    $(".woman").attr("checked", true);
+                else
+                    $(".man").attr("checked", true);
                 $("#edit_clientAddress").val(data.clientAddress);
             }
         });
@@ -291,12 +329,10 @@
     }
 
     function deleteCustomer(id) {
-        if (confirm('确实要删除该客户吗?')) {
-            $.post("<%=basePath%>customer/delete.action", {"id": id}, function (data) {
+            $.post("<%=basePath%>client/delete.action", {"id": id}, function (data) {
                 alert("客户删除更新成功！");
                 window.location.reload();
             });
-        }
     }
 </script>
 </body>

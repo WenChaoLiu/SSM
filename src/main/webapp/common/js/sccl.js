@@ -448,6 +448,7 @@ $(function () {
                         "isHeader": "0",
                         "childMenus": ""
                     },
+
                     {
                         "id": "5",
                         "name": "订单退货",
@@ -492,7 +493,38 @@ $(function () {
                         "childMenus": ""
                     }
                 ]
-            }
+            },
+            {
+                         "id": "9",
+                        "name": "客户管理",
+                        "parentId": "1",
+                        "url": "",
+                        "icon": "&#xe602;",
+                        "order": "1",
+                        "isHeader": "0",
+                        "childMenus": [
+                            {
+                                "id": "10",
+                              "name": "客户信息",
+                                "parentId": "9",
+                                "url": "client/toClientList.action",
+                                "icon": "",
+                                "order": "1",
+                                "isHeader": "0",
+                                "childMenus": ""
+                        },
+                        {
+                            "id": "11",
+                                "name": "新增客户",
+                                "parentId": "9",
+                                "url": "home4.html",
+                                "icon": "",
+                                "order": "1",
+                                "isHeader": "0",
+                                "childMenus": ""
+                        }
+                    ]
+}
         ]
     },
 

@@ -13,4 +13,5 @@ public interface ClientMapperCustom {
     List<ClientCustom> findClientList(ClientQueryVo clientQueryVo) throws Exception;
 
     void updateClient(ClientQueryVo clientQueryVo) throws Exception;
+    void deleteClientById(Integer id) throws Exception;
 }

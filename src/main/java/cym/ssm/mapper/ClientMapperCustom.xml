@@ -39,8 +39,8 @@
             AND client_isdel=1
         </where>
     </sql>
-
-    <!--更新客户信息-->
+<!--
+    &lt;!&ndash;更新客户信息&ndash;&gt;
     <update id="updateClient" parameterType="cym.ssm.po.ClientCustom">
         UPDATE FROM client
         <set>
@@ -53,5 +53,14 @@
             <if test="clientType != null and clientType !=''">client_type=#{clientType}</if>
             <if test="clientMobile != null and clientMobile !=''">client_mobile=#{clientMobile}</if>
         </set>
+    </update>-->
+
+    <!--删除用户-->
+    <update id="deleteClientById" parameterType="int">
+        UPDATE  client
+        <set>
+            client_isdel =0
+        </set>
+        WHERE id=#{id}
     </update>
 </mapper>
