@@ -29,5 +29,4 @@
         <property name="basePackage" value="cym.ssm.mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
-
 </beans>
