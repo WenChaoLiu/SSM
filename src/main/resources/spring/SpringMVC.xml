@@ -31,6 +31,8 @@
     <!--    <mvc:resources mapping="/WEB-INF/**" location=""/>-->
 
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+    <!-- 资源映射 -->
+    <mvc:resources location="/common" mapping="/*"/>
     <!--自定义参数绑定-->
     <!--转换器-->
 

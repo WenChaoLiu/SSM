@@ -20,13 +20,6 @@ import java.util.List;
 public class ClientController {
     @Autowired
     private IClientService clientService;
-
-    /*可以删掉*/
-    @RequestMapping("/toClientList1")
-    public String toClientList1() throws Exception {
-        return "client/customer";
-    }
-
     @RequestMapping("/toClientList")
     public String toClientList(Model model, ClientQueryVo clientQueryVo) throws Exception {
         /*获取查询条件*/

@@ -21,12 +21,12 @@ public class LoginController {
     @Autowired
     private IUserService userService;
 
-    @RequestMapping("/login")
+/*    @RequestMapping("/login")
     public ModelAndView toLogin() throws Exception {
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("page/login");
         return modelAndView;
-    }
+    }*/
 
     @RequestMapping(value = "validateUser", method = {RequestMethod.POST, RequestMethod.GET})
     public String validateUser(HttpSession session,
@@ -40,19 +40,5 @@ public class LoginController {
             return "page/index";
         }
         return "page/login";
-    }
-
-    @RequestMapping("/home")
-    public ModelAndView toHome() throws Exception {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("page/home");
-        return modelAndView;
-    }
-
-    @RequestMapping("/test")
-    public ModelAndView test() throws Exception {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("test/customer");
-        return modelAndView;
     }
 }

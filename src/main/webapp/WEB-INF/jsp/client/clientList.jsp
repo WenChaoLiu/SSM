@@ -127,18 +127,20 @@
                                                 value="${row.clientAddtime}"></fmt:formatDate></td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal"
-                                   data-target="#clientEditDialog" onclick="editCustomer(${row.id})">修改</a>
+                                   data-target="#clientEditDialog" onclick="editClient(${row.id})">修改</a>
 
                                 <a href="" class="btn btn-danger btn-xs"
                                    data-toggle="modal"
                                    data-target="#myModal">删除</a>
                                     <%--删除对话框--%>
                                 <!-- 模态框（Modal） -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">
                                                     &times;
                                                 </button>
                                                 <h4 class="modal-title" style="color: red">
@@ -151,7 +153,8 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                                                 </button>
-                                                <button type="button" class="btn btn-primary"   onclick="deleteCustomer(${row.id})">
+                                                <button type="button" class="btn btn-primary"
+                                                        onclick="deleteClient(${row.id})">
                                                     删除
                                                 </button>
                                             </div>
@@ -164,10 +167,27 @@
                     </c:forEach>
                     </tbody>
                 </table>
-
-
-                <div class="col-md-12 text-right">
-                    <itcast:page url="${pageContext.request.contextPath }/customer/list.action"/>
+                <%--分页--%>
+                <div class="container col-lg-12 text-right">
+                    <nav aria-label="Page navigation" class="">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#" id="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -223,7 +243,7 @@
                         <label for="edit_clientType" style="float:left;padding:7px 15px 0 27px;">客户级别</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="edit_clientType" name="clientType">
-                                <option value=""></option>
+                                <option value="">--请选择--</option>
                                 <c:forEach items="${TypeList}" var="item">
                                     <option value="${item}"
                                             <c:if test="${item == clientType}"> selected</c:if>>${item}</option>
@@ -272,13 +292,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updateCustomer()">保存修改</button>
+                <button type="button" class="btn btn-primary" onclick="updateClient()">保存修改</button>
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 <!-- /#wrapper -->
@@ -300,7 +318,7 @@
 <script src="<%=basePath%>common/js/sb-admin-2.js"></script>
 
 <script type="text/javascript">
-    function editCustomer(id) {
+    function editClient(id) {
         $.ajax({
             type: "get",
             url: "<%=basePath%>client/detail.action",
@@ -321,18 +339,18 @@
             }
         });
     }
-    function updateCustomer() {
+    function updateClient() {
         $.post("<%=basePath%>client/update.action", $("#edit_customer_form").serialize(), function (data) {
             alert("客户信息更新成功！");
             window.location.reload();
         });
     }
 
-    function deleteCustomer(id) {
-            $.post("<%=basePath%>client/delete.action", {"id": id}, function (data) {
-                alert("客户删除更新成功！");
-                window.location.reload();
-            });
+    function deleteClient(id) {
+        $.post("<%=basePath%>client/delete.action", {"id": id}, function (data) {
+            alert("客户删除更新成功！");
+            window.location.reload();
+        });
     }
 </script>
 </body>

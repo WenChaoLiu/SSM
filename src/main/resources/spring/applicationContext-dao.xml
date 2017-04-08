@@ -20,7 +20,7 @@
         <property name="dataSource" ref="dataSource"></property>
         <!--加载mybatis的全局配置文件-->
         <property name="configLocation" value="classpath:/mybatis/mybatis.xml"
-                  ></property>
+        ></property>
     </bean>
     <!--Mapper扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
